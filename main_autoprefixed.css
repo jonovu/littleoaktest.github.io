@@ -13,10 +13,13 @@ body {
     height: 50px;
     width: 50px;
     left: 30px;
-    top: 30px;
-    background-image: url('images/icons/menu-dark.png');
+    top: 75px;
+    background-image: url('images/icons/menu.png');
     background-size: cover;
     transition: all 0.2s ease;
+}
+.hamburger.dark {
+    background-image: url('images/icons/menu-dark.png');
 }
 
 .menu-transition.active .hamburger {
@@ -50,6 +53,7 @@ body {
     width: 37px;
     padding: 37px;
 }
+
 .menu-transition .icon:nth-child(2) img {
     padding-left: 0;
 }
@@ -69,7 +73,7 @@ body {
 .menu-transition ul {
     position: relative;
     left: 30px;
-    top: 120px;
+    top: 150px;
     max-width: 40px;
 }
 
@@ -202,18 +206,12 @@ li {
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     cursor: pointer;
-    background-color: transparent;
 }
 
 .button:hover {
-    background-color: #99a8b1;
+    border-color: rgba(154, 169, 177, 0.2);
 }
 
-.button:hover p,
-.button:hover a,
-.menus-wrapper .button:hover a {
-    color: #3c3c2d;
-}
 
 .button p,
 .button a,
@@ -1852,7 +1850,16 @@ li {
 }
 
 
-
+#map {
+    height: 250px;
+    width: 60vw;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+}
 @media only screen and (max-width: 800px) {
     .desktop-no-show {
         display: block;
@@ -1875,12 +1882,12 @@ li {
     }
 
     .gallery-wrapper {
-        width: 80vw;
-        height: 250px;
-        margin: auto;
+        width: 100vw;
+        top: 50px;
+        height: 500px;
         -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
-        background-position: center;
+        background-position: right;
         -webkit-animation: none;
         animation: none;
         background-image: url(images/gallery/1.jpg);
@@ -1922,11 +1929,9 @@ li {
     }
 
     .gallery-wrapper .darken {
-        background: transparent;
+
     }
 
-    .desktop-popup,
-    .logo-wrapper,
     .about-wrapper,
     .gallery-wrapper,
     .contact-wrapper,
@@ -1961,9 +1966,9 @@ li {
         top: 0;
         display: block;
         margin: auto;
-        top: 10px;
-        margin-bottom: 30px;
-        width: 250px;
+        top: 90px;
+        margin-bottom: -70px;
+        width: 270px;
         position: relative;
         min-height: 70px;
         left: 0;
@@ -1972,7 +1977,6 @@ li {
     }
 
     .logo-wrapper .logotype {
-        color: #3c3c2d;
         font-size: 30pt;
         -webkit-animation: none;
         animation: none;
@@ -2009,22 +2013,21 @@ li {
 
     .about-wrapper {
         max-width: 70%;
-        bottom: auto;
-        margin: auto;
+pointer-events: none;        top: 400px;
         margin-bottom: 30px;
-        left: 0;
+        left: 15%;
+        position: absolute;
     }
-
+    
     .about-wrapper p,
     .contact-wrapper p {
-        font-size: 13pt;
+        font-size: 18pt;
         line-height: 1.7;
         text-align: center;
     }
 
     .contact-wrapper {
-        top: auto;
-
+        top: 60px;
         width: 80%;
         margin-bottom: 30px;
     }
@@ -2032,6 +2035,7 @@ li {
     .contact-wrapper .textbox {
         display: block;
         opacity: 1;
+        pointer-events: auto;
     }
 
     .contact-wrapper .textbox p {
@@ -2041,9 +2045,13 @@ li {
     }
 
     .menus-section-wrapper {
-        top: -30px;
+        top: 60px;
         min-height: auto;
         width: 100%;
+    }
+    
+    .menus-section-wrapper .textbox {
+        margin-top: -40px;
     }
 
     .download-button {
@@ -2138,7 +2146,7 @@ li {
         height: auto;
         margin-top: 50px;
         margin-bottom: -20px;
-        background-color: rgba(253, 253, 253, 1);
+        background-color: #fafbff;
         border-radius: 0;
         -webkit-box-shadow: 0 0 10px 0 #dddddd;
         box-shadow: 0 0 10px 0 #dddddd;
@@ -2154,7 +2162,6 @@ li {
     }
 
     .desktop-popup ul li,
-    .about-wrapper p,
     .contact-wrapper p,
     .menus-wrapper ul li a {
         color: #3c3c2d;
@@ -2333,16 +2340,18 @@ li {
     .gallery-wrapper2,
     .menus-section-wrapper,
     .mobile-heading {
-        animation: general-fadein 1.2s ease 4s forwards;
+        animation: general-fadein 1.4s ease 4s forwards;
         opacity: 0;
     }
 
     .logo-wrapper {
-        animation-delay: 0.4s;
+        animation: duration: 2s;
+        animation-delay: 2s;
     }
 
     .gallery-wrapper:not(.gallery-wrapper2) {
-        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-delay: 0.4s;
     }
 
     .contact-wrapper {
@@ -2358,12 +2367,13 @@ li {
         animation-delay: 5.6s;
     }
 
-    .menu-transition {
-        animation: general-fadein 1.2s ease;
+    .hamburger {
+        animation: general-fadein 1.2s ease 5.2s forwards;
+        opacity: 0;
     }
 
     .mobile-heading {
-        padding: 0px 5px 0px 5px;
+        padding: 0px 10px 2px 10px;
         border: 1.5pt solid #99a8b1;
         border-radius: 6px;
         width: auto;
@@ -2372,7 +2382,9 @@ li {
         margin: auto;
         margin-bottom: 10px;
         max-width: 60px;
+        line-height: 20pt;
     }
+
     .mobile-heading p {
         font-family: SF Pro Text, sans-serif;
         text-align: center;
@@ -2381,4 +2393,5 @@ li {
         font-size: 8pt;
         width: auto;
     }
+
 }

@@ -61,4 +61,16 @@ $(document).ready(function() {
     $(window).resize(function() {
         $('.menu-transition, .body-class').removeClass('active');
     });
+    
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+
+         //>=, not <=
+        if (scroll >= 300) {
+            //clearHeader, not clearheader - caps H
+            $(".hamburger").addClass("dark");
+        }  else {
+            $(".hamburger").removeClass("dark");
+        }
+    });
 });
